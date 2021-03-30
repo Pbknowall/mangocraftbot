@@ -1,5 +1,6 @@
 const { MessageEmbed, Client } = require('discord.js');
 const client = new Client();
+const owners = ['283312969931292672', '659572152873385996']
 
 require('dotenv').config()
 client.login(process.env.TOKEN)
@@ -61,11 +62,13 @@ client.on('message', async (message) => {
                 break;
 
             case 'eval':
-                try {
-                    const res = await eval(args.slice(1).join(" "))
-                    message.channel.send(`\`\`\`js\n${res}\`\`\``)
-                } catch (err) {
-                    message.channel.send('Error', `\`\`\`js\n${err}\`\`\``)
+                if (owners.includes(message.author.id)) {
+                    try {
+                        const res = await eval(args.slice(1).join(" "))
+                        message.channel.send(`\`\`\`js\n${res}\`\`\``)
+                    } catch (err) {
+                        message.channel.send('Error', `\`\`\`js\n${err}\`\`\``)
+                    }
                 }
         }
     }
