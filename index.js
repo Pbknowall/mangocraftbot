@@ -70,6 +70,17 @@ client.on('message', async (message) => {
                         message.channel.send('Error', `\`\`\`js\n${err}\`\`\``)
                     }
                 }
+                break;
+                
+                case 'anuncie':
+                    const items = args.slice(1).join(' ').split('|')
+                    message.channel.send({ embed: { title: items[0], description: items[1], timestamp: Date.now(), footer: `Anúncio por ${messagr.author.tag}`, color: '#fa820a' } })
+                    break;
+        }
+    } else {
+        if (message.channel.id === '826124252494430308') {
+            message.react('✅')
+            message.react('❌')
         }
     }
 })
