@@ -74,7 +74,8 @@ client.on('message', async (message) => {
                 
                 case 'anuncie':
                     const items = args.slice(2).join(' ').split('|')
-                    message.guild.channels.cache.get(args[1]).send('<@283312969931292672>', { embed: { title: items[0], description: items[1], timestamp: Date.now(), footer: `Anúncio por ${message.author.tag}`, color: '#fa820a' } })
+                    const anuncio = args[1] === '-a' ? '826119350543974420' : '826122694466469941'
+                    message.guild.channels.cache.get(anuncio).send('<@283312969931292672>', { embed: { title: items[0], description: items[1], timestamp: Date.now(), footer: { text: `Anúncio por ${message.author.tag}`, iconURL: message.guild.iconURL() }, color: '#fa820a' } }).then(() => message.react('✅')).then(r => { r.remove() }, 3000)
                     break;
         }
     } else {
