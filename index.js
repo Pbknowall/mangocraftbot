@@ -74,7 +74,7 @@ client.on('message', async (message) => {
                 
                 case 'anuncie':
                     const items = args.slice(2).join(' ').split('|')
-                    message.guild.channels.cache.get(args[1]).send({ embed: { title: items[0], description: items[1], timestamp: Date.now(), footer: `Anúncio por ${message.author.tag}`, color: '#fa820a' } })
+                    message.guild.channels.cache.get(args[1]).send('<@283312969931292672>', { embed: { title: items[0], description: items[1], timestamp: Date.now(), footer: `Anúncio por ${message.author.tag}`, color: '#fa820a' } })
                     break;
         }
     } else {
