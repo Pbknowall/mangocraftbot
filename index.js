@@ -77,7 +77,7 @@ client.on('message', async (message) => {
 
 
             case 'anuncie':
-                if (message.member.hasPermission('GUILD')) break;
+                if (message.member.hasPermission('MANAGE_GUILD')) break;
                 const items = args.slice(2).join(' ').split('|')
                 if (!args[1] || !items[0]) return message.channel.send('Utilização:\n```mango anuncie -a/-n Título|Corpo```')
                 const anuncio = args[1] === '-a' ? '826119350543974420' : '826122694466469941'
