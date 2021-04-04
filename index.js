@@ -79,9 +79,9 @@ client.on('message', async (message) => {
             case 'anuncie':
                 if (message.member.hasPermission('GUILD')) break;
                 const items = args.slice(2).join(' ').split('|')
-                if (!items[0]) return message.channel.send('Utilização:\n```mango anuncie -a/-n Título|Corpo```')
+                if (!args[1] || !items[0]) return message.channel.send('Utilização:\n```mango anuncie -a/-n Título|Corpo```')
                 const anuncio = args[1] === '-a' ? '826119350543974420' : '826122694466469941'
-                message.guild.channels.cache.get(anuncio).send('<@283312969931292672>', {
+                message.guild.channels.cache.get(anuncio).send({
                     embed: {
                         title: items[0] ? items[0] : 'Título não fornecido',
                         description: items[1] ? items[1] : 'Corpo não fornecido',
