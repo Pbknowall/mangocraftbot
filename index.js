@@ -15,7 +15,7 @@ client.on('ready', () => {
     let userCount = array.reduce((a, b) => a + b)
 
     console.log(`${client.user.tag} está online com ${userCount} utilizadores`)
-    client.user.setActivity(`on [NÃO LANÇADO]`)
+    client.user.setActivity(`IP: [NÃO LANÇADO]`)
 });
 
 client.on('guildMemberAdd', (member) => {
