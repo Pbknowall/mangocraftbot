@@ -97,9 +97,9 @@ client.on('message', async (message) => {
                 break;
         }
     } else {
-        if (message.channel.id === '826124252494430308') {
-            message.react('✅')
-            message.react('❌')
+        if (message.channel.id === '826124252494430308' || message.channel.id === '826124237025837098') {
+            message.react(message.guild.emojis.cache.get('828218635478368317') ? message.guild.emojis.cache.get('828218635478368317') : '✅')
+            message.react(message.guild.emojis.cache.get('828218635415060511') ? message.guild.emojis.cache.get('828218635415060511') : '❌')
         }
     }
 })
